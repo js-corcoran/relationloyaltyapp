@@ -43,7 +43,6 @@ export default function RewardsHistoryPage() {
         q: qParam,
         sort: sortParam,
         cursor: append ? nextCursor : null,
-        accountContext,
       });
 
       if (append) {
@@ -56,7 +55,6 @@ export default function RewardsHistoryPage() {
 
       if (!append) {
         console.log('history_viewed', { 
-          accountContext, 
           total: response.total, 
           initialFilters: { type: typeParam, from: fromParam, to: toParam, q: qParam, sort: sortParam }
         });
