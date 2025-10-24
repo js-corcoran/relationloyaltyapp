@@ -1,0 +1,210 @@
+{
+  "accountContext": "overview",
+  "streak": {
+    "days": 12,
+    "skipAllowance": 2,
+    "skipsUsed": 1,
+    "nextMilestone": 14
+  },
+  "badges": [
+    {
+      "id": "b-early",
+      "title": "Early Bird",
+      "status": "earned",
+      "kind": "milestone",
+      "criteria": "Log in 7 days in a row",
+      "progressPct": 100,
+      "earnedAt": "2025-10-05",
+      "emblem": "🌅",
+      "relatedActions": [
+        {"label": "View history", "route": "/rewards/history"}
+      ],
+      "source": "Engagement",
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-spending",
+      "title": "Big Spender",
+      "status": "earned",
+      "kind": "milestone",
+      "criteria": "Spend $1,000 total",
+      "progressPct": 100,
+      "earnedAt": "2025-09-15",
+      "emblem": "💰",
+      "relatedActions": [
+        {"label": "View transactions", "route": "/rewards/history"}
+      ],
+      "source": "Spend",
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-saver",
+      "title": "Smart Saver",
+      "status": "earned",
+      "kind": "surprise",
+      "criteria": "Maintain $5,000 in savings for 30 days",
+      "progressPct": 100,
+      "earnedAt": "2025-08-20",
+      "emblem": "🏦",
+      "relatedActions": [
+        {"label": "View savings", "route": "/goals"}
+      ],
+      "source": "Savings",
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-groceries",
+      "title": "Grocery Guru",
+      "status": "in_progress",
+      "kind": "challenge",
+      "criteria": "Spend at least $150 at grocery partners this month",
+      "progressPct": 60,
+      "earnedAt": null,
+      "emblem": "🛒",
+      "relatedActions": [
+        {"label": "See grocery offers", "route": "/offers?category=Groceries"}
+      ],
+      "source": "Offers",
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-coffee",
+      "title": "Caffeine Connoisseur",
+      "status": "in_progress",
+      "kind": "challenge",
+      "criteria": "Visit 5 different coffee shops",
+      "progressPct": 40,
+      "earnedAt": null,
+      "emblem": "☕",
+      "relatedActions": [
+        {"label": "Find coffee offers", "route": "/offers?category=Dining"}
+      ],
+      "source": "Offers",
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-streak7",
+      "title": "Week Warrior",
+      "status": "in_progress",
+      "kind": "streak",
+      "criteria": "Maintain a 7-day login streak",
+      "progressPct": 85,
+      "earnedAt": null,
+      "emblem": "🔥",
+      "relatedActions": [
+        {"label": "Learn about streaks", "route": "/support#streaks"}
+      ],
+      "source": "Engagement",
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-offers10",
+      "title": "Offer Optimizer",
+      "status": "in_progress",
+      "kind": "milestone",
+      "criteria": "Activate 10 different offers",
+      "progressPct": 70,
+      "earnedAt": null,
+      "emblem": "🎯",
+      "relatedActions": [
+        {"label": "Browse offers", "route": "/offers"}
+      ],
+      "source": "Offers",
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-reserved",
+      "title": "Reserved Exclusive",
+      "status": "locked",
+      "kind": "surprise",
+      "criteria": "Available to Reserved tier members",
+      "progressPct": 0,
+      "earnedAt": null,
+      "emblem": "👑",
+      "relatedActions": [
+        {"label": "View tiers", "route": "/tiers"}
+      ],
+      "source": null,
+      "accountContext": "reserved"
+    },
+    {
+      "id": "b-platinum",
+      "title": "Platinum Path",
+      "status": "locked",
+      "kind": "milestone",
+      "criteria": "Reach Platinum tier",
+      "progressPct": 0,
+      "earnedAt": null,
+      "emblem": "💎",
+      "relatedActions": [
+        {"label": "See tier benefits", "route": "/tiers"}
+      ],
+      "source": null,
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-travel",
+      "title": "Travel Pro",
+      "status": "locked",
+      "kind": "challenge",
+      "criteria": "Book 3 trips using your card",
+      "progressPct": 0,
+      "earnedAt": null,
+      "emblem": "✈️",
+      "relatedActions": [
+        {"label": "View travel offers", "route": "/offers?category=Travel"}
+      ],
+      "source": null,
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-dining",
+      "title": "Dining Deluxe",
+      "status": "locked",
+      "kind": "milestone",
+      "criteria": "Spend $500 at restaurants",
+      "progressPct": 0,
+      "earnedAt": null,
+      "emblem": "🍽️",
+      "relatedActions": [
+        {"label": "Find dining offers", "route": "/offers?category=Dining"}
+      ],
+      "source": null,
+      "accountContext": "overview"
+    },
+    {
+      "id": "b-referral",
+      "title": "Friend Magnet",
+      "status": "locked",
+      "kind": "surprise",
+      "criteria": "Refer 3 friends who open accounts",
+      "progressPct": 0,
+      "earnedAt": null,
+      "emblem": "🤝",
+      "relatedActions": [
+        {"label": "Share referral link", "route": "/goals"}
+      ],
+      "source": null,
+      "accountContext": "overview"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "c-monthly",
+      "title": "October Booster",
+      "due": "2025-10-31",
+      "stepsTotal": 3,
+      "stepsDone": 2,
+      "relatedBadgeId": "b-groceries"
+    },
+    {
+      "id": "c-coffee",
+      "title": "Coffee Explorer",
+      "due": "2025-11-15",
+      "stepsTotal": 5,
+      "stepsDone": 2,
+      "relatedBadgeId": "b-coffee"
+    }
+  ]
+}
+

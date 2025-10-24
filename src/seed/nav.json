@@ -1,0 +1,22 @@
+{
+  "primary": [
+    { "id": "home", "label": "Home", "path": "/", "icon": "home" },
+    { "id": "rewards", "label": "Rewards", "path": "/rewards", "icon": "gift" },
+    { "id": "offers", "label": "Offers", "path": "/offers", "icon": "tag" },
+    { "id": "tiers", "label": "Tiers", "path": "/tiers", "icon": "medal" }
+  ],
+  "secondary": [
+    { "id": "history", "label": "History", "path": "/rewards/history", "icon": "list" },
+    { "id": "badges", "label": "Badges", "path": "/rewards/badges", "icon": "trophy" },
+    { "id": "goals", "label": "Goals", "path": "/goals", "icon": "target" },
+    { "id": "support", "label": "Support", "path": "/support", "icon": "headset" },
+    { "id": "settings", "label": "Settings", "path": "/settings", "icon": "settings" }
+  ],
+  "flags": {
+    "showBadges": true,
+    "showGoals": true,
+    "bottomTabs": true,
+    "sideRail": true
+  }
+}
+

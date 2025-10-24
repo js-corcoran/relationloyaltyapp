@@ -1,0 +1,38 @@
+{
+  "points": 48250,
+  "usdPerPoint": 0.006,
+  "accountContext": "overview",
+  "redemptionRules": {
+    "minPoints": 500,
+    "step": 100,
+    "creditByDays": 3,
+    "destinations": ["statement", "savings"]
+  },
+  "recentActivity": [
+    {
+      "id": "a1001",
+      "type": "earn",
+      "points": 1200,
+      "dollars": 7.2,
+      "when": "2025-10-20",
+      "desc": "Groceries - Local Mart"
+    },
+    {
+      "id": "a1000",
+      "type": "redeem",
+      "points": 5000,
+      "dollars": 30,
+      "when": "2025-10-12",
+      "desc": "Statement Credit"
+    },
+    {
+      "id": "a0999",
+      "type": "earn",
+      "points": 800,
+      "dollars": 4.8,
+      "when": "2025-10-10",
+      "desc": "Fuel - QuickFuel"
+    }
+  ]
+}
+

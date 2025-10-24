@@ -1,0 +1,12 @@
+{
+  "language": "en",
+  "nudgeSensitivity": "medium",
+  "interests": ["Grocery", "Dining", "Fuel"],
+  "quietHours": {
+    "enabled": true,
+    "start": "21:00",
+    "end": "07:00"
+  },
+  "version": 1
+}
+

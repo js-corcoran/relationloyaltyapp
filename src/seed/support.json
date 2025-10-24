@@ -1,0 +1,83 @@
+{
+  "supportProfile": {
+    "tier": "Gold",
+    "hasPriorityLine": true,
+    "phone": "+1-800-555-0123",
+    "hours": "Mon–Fri 8am–8pm ET",
+    "slaMinutes": 2,
+    "standardSlaMinutes": 10
+  },
+  "faq": [
+    {
+      "id": "f1",
+      "title": "When will my rewards credit post?",
+      "snippet": "Most credits post within 2–3 business days.",
+      "body": "Redemptions typically post within 3 business days of your request. For statement credits, you'll see the credit applied to your account within this timeframe. For transfers to savings, processing may take up to 5 business days depending on your bank.",
+      "tags": ["rewards", "credit by", "redemption"]
+    },
+    {
+      "id": "f2",
+      "title": "How do I activate merchant offers?",
+      "snippet": "Use the Offers tab to toggle merchants.",
+      "body": "Visit the Offers screen from the main navigation. Browse available offers or search for specific merchants. Tap the 'Activate' button on any offer you want to use. Once activated, the cashback will automatically apply when you use your card at that merchant. You can deactivate offers at any time.",
+      "tags": ["offers", "activation", "merchants"]
+    },
+    {
+      "id": "f3",
+      "title": "What counts toward tier progress?",
+      "snippet": "AUM and qualifying balances contribute.",
+      "body": "Tier progress is based on your Assets Under Management (AUM) and Average Account Balance (AAB) thresholds. AUM includes all deposit accounts, investment accounts, and retirement accounts. AAB is calculated as your average daily balance across all checking and savings accounts over the past 90 days. Both metrics are updated monthly.",
+      "tags": ["tiers", "benefits", "progress"]
+    },
+    {
+      "id": "f4",
+      "title": "How do Round-Ups work?",
+      "snippet": "Purchases are rounded to the next dollar.",
+      "body": "When you enable Round-Ups, every purchase you make with your card is rounded up to the nearest dollar. The difference is automatically transferred to your selected savings goal. For example, if you spend $4.35, we'll round up to $5.00 and transfer $0.65 to your goal. You can enable or disable Round-Ups anytime from the Goals page.",
+      "tags": ["goals", "round-ups", "savings"]
+    },
+    {
+      "id": "f5",
+      "title": "Can I request a callback outside business hours?",
+      "snippet": "Callbacks are scheduled during business hours.",
+      "body": "Callback requests can be submitted 24/7, but our team will call you during business hours: Monday through Friday, 8am to 8pm ET. If you request a callback outside these hours, we'll schedule it for the next available business day window. You'll receive confirmation of your scheduled callback time.",
+      "tags": ["support", "callback", "hours"]
+    },
+    {
+      "id": "f6",
+      "title": "What is the difference between tiers?",
+      "snippet": "Higher tiers unlock more benefits and rewards.",
+      "body": "Our tiers range from Bronze to Reserved. Each tier offers progressively better benefits including higher cashback rates, priority customer support, exclusive event invitations, waived fees, and enhanced travel benefits. Gold tier and above includes access to our Priority Line with under 2-minute wait times. To advance tiers, increase your AUM or AAB to meet the threshold requirements.",
+      "tags": ["tiers", "comparison", "benefits"]
+    },
+    {
+      "id": "f7",
+      "title": "How do I redeem my points?",
+      "snippet": "Visit the Rewards page to redeem points.",
+      "body": "Go to the Rewards page and click 'Redeem Points'. Choose your redemption amount (minimum 500 points) and select a destination: statement credit or transfer to savings. Confirm your redemption and you'll receive a confirmation with the expected credit date. Most redemptions are processed within 3 business days.",
+      "tags": ["rewards", "redemption", "points"]
+    },
+    {
+      "id": "f8",
+      "title": "How do I set up Auto-Save?",
+      "snippet": "Configure recurring savings from the Goals page.",
+      "body": "Visit the Goals page and select a goal. Click 'Configure Auto-Save' and choose your amount and frequency (weekly or monthly). Auto-Save will automatically transfer the specified amount from your checking account to your goal on the schedule you choose. You can modify or cancel Auto-Save settings anytime.",
+      "tags": ["goals", "auto-save", "savings"]
+    },
+    {
+      "id": "f9",
+      "title": "What are badges and how do I earn them?",
+      "snippet": "Badges reward your financial progress and engagement.",
+      "body": "Badges are achievement rewards you earn by reaching milestones, maintaining streaks, and completing challenges. Visit the Badges page to see all available badges and track your progress. Some badges are earned automatically (like reaching spending milestones), while others require you to complete specific challenges or maintain activity streaks.",
+      "tags": ["badges", "rewards", "achievements"]
+    },
+    {
+      "id": "f10",
+      "title": "How do I update my contact information?",
+      "snippet": "Update your profile from Account Settings.",
+      "body": "To update your phone number, email, or mailing address, go to Account Settings from the main menu. Select 'Profile Information' and make your changes. For security, you may be asked to verify your identity before saving updates to your contact information. Changes typically take effect immediately.",
+      "tags": ["account", "profile", "contact"]
+    }
+  ]
+}
+

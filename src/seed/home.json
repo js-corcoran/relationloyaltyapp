@@ -1,0 +1,24 @@
+{
+  "member": {
+    "id": "m_001",
+    "tier": "Gold",
+    "aum": 42000,
+    "aab": 0,
+    "nextTier": "Platinum",
+    "nextTierThreshold": 75000,
+    "progressPct": 56,
+    "graceEndsAt": null
+  },
+  "points": { "points": 48250, "usdPerPoint": 0.006 },
+  "accountContext": { "value": "overview" },
+  "nextBestActions": [
+    { "id": "nba_001", "title": "Add Direct Deposit to reach Platinum faster", "cta": "View steps", "priority": "high" },
+    { "id": "nba_002", "title": "Turn on Round-Ups for Emergency Fund", "cta": "Enable", "priority": "medium" }
+  ],
+  "offersTeaser": [
+    { "id": "of_001", "merchant": "Local Grocery", "category": "Grocery", "status": "active", "cashbackPct": 10, "expires": "2025-11-30", "creditBy": "2025-12-05" },
+    { "id": "of_003", "merchant": "QuickFuel", "category": "Fuel", "status": "active", "cashbackPct": 8, "expires": "2025-11-10", "creditBy": "2025-11-15" }
+  ]
+}
+
+

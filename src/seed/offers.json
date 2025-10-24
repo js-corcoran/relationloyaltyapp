@@ -1,0 +1,241 @@
+{
+  "offers": [
+    {
+      "id": "of_001",
+      "merchant": "FreshMart Grocery",
+      "category": "Grocery",
+      "cashbackPct": 10,
+      "expires": "2025-11-30",
+      "creditBy": "2025-12-05",
+      "active": false,
+      "valueScore": 0.92,
+      "logoUrl": null,
+      "terms": ["Cashback on in-store purchases only", "Excludes gift cards and alcohol"],
+      "locations": [
+        { "id": "l1", "address": "123 Main St", "city": "Springfield", "state": "MA" },
+        { "id": "l2", "address": "456 Oak Ave", "city": "Boston", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_002",
+      "merchant": "Bella Italia",
+      "category": "Dining",
+      "cashbackPct": 15,
+      "expires": "2025-12-15",
+      "creditBy": "2025-12-20",
+      "active": true,
+      "valueScore": 0.95,
+      "logoUrl": null,
+      "terms": ["Valid for dine-in only", "Cannot be combined with other offers"],
+      "locations": [
+        { "id": "l3", "city": "Cambridge", "state": "MA" }
+      ],
+      "eligibleCards": ["Reserved"]
+    },
+    {
+      "id": "of_003",
+      "merchant": "QuickFuel Station",
+      "category": "Fuel",
+      "cashbackPct": 5,
+      "expires": "2025-12-31",
+      "creditBy": "2026-01-05",
+      "active": false,
+      "valueScore": 0.78,
+      "logoUrl": null,
+      "terms": ["Valid at participating locations", "Minimum purchase $20"],
+      "locations": [
+        { "id": "l4", "address": "789 Highway 1", "city": "Worcester", "state": "MA" },
+        { "id": "l5", "address": "101 Route 9", "city": "Framingham", "state": "MA" },
+        { "id": "l6", "address": "202 Main Rd", "city": "Newton", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_004",
+      "merchant": "SkyHigh Airlines",
+      "category": "Travel",
+      "cashbackPct": 20,
+      "expires": "2025-11-25",
+      "creditBy": "2025-11-30",
+      "active": false,
+      "valueScore": 0.98,
+      "logoUrl": null,
+      "terms": ["Domestic flights only", "Booking must be made directly", "Excludes baggage fees"],
+      "locations": [],
+      "eligibleCards": ["Reserved"]
+    },
+    {
+      "id": "of_005",
+      "merchant": "TechZone Electronics",
+      "category": "Retail",
+      "cashbackPct": 8,
+      "expires": "2025-12-20",
+      "creditBy": "2025-12-25",
+      "active": true,
+      "valueScore": 0.85,
+      "logoUrl": null,
+      "terms": ["Valid on purchases over $100", "Excludes Apple products"],
+      "locations": [
+        { "id": "l7", "address": "555 Tech Blvd", "city": "Cambridge", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_006",
+      "merchant": "Coffee Haven",
+      "category": "Dining",
+      "cashbackPct": 12,
+      "expires": "2025-11-28",
+      "creditBy": "2025-12-03",
+      "active": false,
+      "valueScore": 0.82,
+      "logoUrl": null,
+      "terms": ["Valid Monday-Friday before 10am", "One per customer per day"],
+      "locations": [
+        { "id": "l8", "city": "Boston", "state": "MA" },
+        { "id": "l9", "city": "Cambridge", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_007",
+      "merchant": "Organic Foods Market",
+      "category": "Grocery",
+      "cashbackPct": 7,
+      "expires": "2026-01-15",
+      "creditBy": "2026-01-20",
+      "active": false,
+      "valueScore": 0.88,
+      "logoUrl": null,
+      "terms": ["Valid on all purchases", "No exclusions"],
+      "locations": [
+        { "id": "l10", "address": "321 Green St", "city": "Somerville", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_008",
+      "merchant": "Urban Rides Car Service",
+      "category": "Services",
+      "cashbackPct": 10,
+      "expires": "2025-12-10",
+      "creditBy": "2025-12-15",
+      "active": false,
+      "valueScore": 0.79,
+      "logoUrl": null,
+      "terms": ["Valid for rides in Greater Boston area", "Maximum cashback $25 per ride"],
+      "locations": [],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_009",
+      "merchant": "Fashion Forward Boutique",
+      "category": "Retail",
+      "cashbackPct": 15,
+      "expires": "2025-12-05",
+      "creditBy": "2025-12-10",
+      "active": true,
+      "valueScore": 0.91,
+      "logoUrl": null,
+      "terms": ["Valid on regular-priced items only", "Cannot be combined with sale items"],
+      "locations": [
+        { "id": "l11", "address": "888 Newbury St", "city": "Boston", "state": "MA" }
+      ],
+      "eligibleCards": ["Reserved"]
+    },
+    {
+      "id": "of_010",
+      "merchant": "Paradise Resort & Spa",
+      "category": "Travel",
+      "cashbackPct": 25,
+      "expires": "2026-02-28",
+      "creditBy": "2026-03-05",
+      "active": false,
+      "valueScore": 0.96,
+      "logoUrl": null,
+      "terms": ["Minimum 2-night stay required", "Valid for bookings made 30 days in advance", "Blackout dates may apply"],
+      "locations": [],
+      "eligibleCards": ["Reserved"]
+    },
+    {
+      "id": "of_011",
+      "merchant": "HomeWorks Hardware",
+      "category": "Retail",
+      "cashbackPct": 6,
+      "expires": "2025-12-31",
+      "creditBy": "2026-01-05",
+      "active": false,
+      "valueScore": 0.74,
+      "logoUrl": null,
+      "terms": ["Valid on all purchases", "Excludes gift cards"],
+      "locations": [
+        { "id": "l12", "address": "777 Industrial Way", "city": "Waltham", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_012",
+      "merchant": "PetCare Veterinary Clinic",
+      "category": "Services",
+      "cashbackPct": 8,
+      "expires": "2025-11-30",
+      "creditBy": "2025-12-05",
+      "active": false,
+      "valueScore": 0.81,
+      "logoUrl": null,
+      "terms": ["Valid for routine checkups and vaccinations", "Excludes emergency services"],
+      "locations": [
+        { "id": "l13", "address": "222 Pet Lane", "city": "Brookline", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_013",
+      "merchant": "Sushi Palace",
+      "category": "Dining",
+      "cashbackPct": 18,
+      "expires": "2025-12-20",
+      "creditBy": "2025-12-25",
+      "active": false,
+      "valueScore": 0.89,
+      "logoUrl": null,
+      "terms": ["Valid Tuesday-Thursday only", "Not valid on holidays"],
+      "locations": [
+        { "id": "l14", "city": "Cambridge", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_014",
+      "merchant": "ExpressWash Car Wash",
+      "category": "Services",
+      "cashbackPct": 10,
+      "expires": "2026-01-31",
+      "creditBy": "2026-02-05",
+      "active": false,
+      "valueScore": 0.72,
+      "logoUrl": null,
+      "terms": ["Valid on full-service wash only", "One use per week"],
+      "locations": [
+        { "id": "l15", "address": "999 Auto Blvd", "city": "Quincy", "state": "MA" }
+      ],
+      "eligibleCards": ["Preferred", "Reserved"]
+    },
+    {
+      "id": "of_015",
+      "merchant": "Global Express Shipping",
+      "category": "Other",
+      "cashbackPct": 5,
+      "expires": "2025-12-31",
+      "creditBy": "2026-01-05",
+      "active": false,
+      "valueScore": 0.68,
+      "logoUrl": null,
+      "terms": ["Valid on domestic shipments only", "Minimum $50 shipping cost"],
+      "locations": [],
+      "eligibleCards": ["Preferred", "Reserved"]
+    }
+  ]
+}
+

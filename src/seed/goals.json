@@ -1,0 +1,65 @@
+{
+  "accountContext": "overview",
+  "goals": [
+    {
+      "id": "g1",
+      "name": "Emergency Fund",
+      "icon": "🛡️",
+      "target": 1500,
+      "saved": 620,
+      "etaDays": 38,
+      "status": "active",
+      "accountContext": "overview",
+      "autosave": {
+        "enabled": true,
+        "amount": 25,
+        "cadence": "weekly",
+        "nextRun": "2025-10-28"
+      },
+      "roundUpsEnabled": true
+    },
+    {
+      "id": "g2",
+      "name": "Holiday Travel",
+      "icon": "✈️",
+      "target": 800,
+      "saved": 200,
+      "etaDays": null,
+      "status": "active",
+      "accountContext": "overview",
+      "autosave": {
+        "enabled": false,
+        "amount": 0,
+        "cadence": "monthly",
+        "nextRun": "2025-11-01"
+      },
+      "roundUpsEnabled": false
+    },
+    {
+      "id": "g3",
+      "name": "Home Down Payment",
+      "icon": "🏡",
+      "target": 15000,
+      "saved": 3200,
+      "etaDays": 145,
+      "status": "active",
+      "accountContext": "overview",
+      "autosave": {
+        "enabled": true,
+        "amount": 100,
+        "cadence": "monthly",
+        "nextRun": "2025-11-01"
+      },
+      "roundUpsEnabled": true
+    }
+  ],
+  "roundUps": {
+    "enabled": true,
+    "estimateMonthly": 18.50
+  },
+  "autoSaveDefaults": {
+    "amount": 25,
+    "cadence": "weekly"
+  }
+}
+

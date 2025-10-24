@@ -1,0 +1,193 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # Project Briefing: Relation Loyalty App\
+\
+## Context\
+You are continuing development on a **multi-screen loyalty/rewards Progressive Web App (PWA)** built with Next.js 15, React 19, and Tailwind CSS v4. This is a design-mode prototype with MSW (Mock Service Worker) handling all API calls. The app is functionally complete for 9 core screens with full navigation.\
+\
+---\
+\
+## [App Setup Summary]\
+\
+**Tech Stack:**\
+- **Framework**: Next.js 15.0.0 + React 19 (TypeScript, App Router, `src/` directory)\
+- **Styling**: Tailwind CSS v4 via `@tailwindcss/postcss`, custom design tokens in `globals.css`\
+- **PWA**: `next-pwa` configured with manifest, icons (192px, 512px)\
+- **Utilities**: `clsx`, `tailwind-merge`, `class-variance-authority`, `tw-animate-css`\
+- **Icons**: `lucide-react`, `@phosphor-icons/react`, `react-icons`\
+- **API Mocking**: MSW with handlers in `/src/mocks/`, seed data in `/src/seed/`\
+- **State Management**: React Context (`AppContext` for Home/Rewards/Offers/Tiers), local component state for other screens\
+\
+**Folder Structure:**\
+```\
+src/\
+\uc0\u9500 \u9472 \u9472  app/                          # Next.js App Router pages\
+\uc0\u9474    \u9500 \u9472 \u9472  layout.tsx               # Root layout with MSW, Toast, AppShell\
+\uc0\u9474    \u9500 \u9472 \u9472  page.tsx                 # Home dashboard\
+\uc0\u9474    \u9500 \u9472 \u9472  rewards/                 # Rewards overview + sub-routes\
+\uc0\u9474    \u9500 \u9472 \u9472  offers/                  # CLO offers\
+\uc0\u9474    \u9500 \u9472 \u9472  tiers/                   # Tier progression\
+\uc0\u9474    \u9500 \u9472 \u9472  goals/                   # Savings goals\
+\uc0\u9474    \u9500 \u9472 \u9472  support/                 # Help & contact\
+\uc0\u9474    \u9492 \u9472 \u9472  settings/                # Preferences\
+\uc0\u9500 \u9472 \u9472  components/                  # Feature components organized by domain\
+\uc0\u9500 \u9472 \u9472  design-system/              # Portable design system (atoms: Button, Card, Input, etc.)\
+\uc0\u9500 \u9472 \u9472  services/                   # Service layer facades (home, rewards, offers, tiers, history, badges, goals, support, preferences, nav)\
+\uc0\u9500 \u9472 \u9472  seed/                       # JSON seed data for MSW\
+\uc0\u9500 \u9472 \u9472  mocks/                      # MSW handlers and browser setup\
+\uc0\u9492 \u9472 \u9472  state/                      # Global state (app-context.tsx)\
+```\
+\
+**Build Tools:**\
+- Package manager: npm\
+- Dev server: `npm run dev` (runs on port 3000/3001)\
+- No test suite configured yet\
+\
+**Styling Conventions:**\
+- Design tokens: `--color-primary`, `--color-accent`, gradients, shadows defined in `globals.css`\
+- Tailwind layers: `@layer base`, `@layer components`, `@layer utilities`\
+- Responsive breakpoints: `sm` (640px), `md` (768px), `lg` (1024px)\
+- Custom utility classes: `.gradient-page`, `.panel`, `.btn-primary`, `.btn-secondary`\
+\
+**State Management:**\
+- **Global (AppContext)**: Used for Home, Rewards, Offers, Tiers screens. Manages `accountContext` (Overview/Preferred/Reserved), loading states, and data fetching.\
+- **Local**: Used for History, Badges, Goals, Support, Settings. Each manages its own state via `useState`.\
+\
+**API Architecture:**\
+- All API calls mocked via MSW handlers (`/src/mocks/handlers.ts`)\
+- Service facades (`/src/services/*.service.ts`) provide typed interfaces\
+- Seed data (`/src/seed/*.json`) serves as mock database\
+- Endpoints follow RESTful patterns: `GET /api/home`, `POST /api/rewards/redeem`, etc.\
+\
+---\
+\
+## [Completed Sections 01-10]\
+\
+### **01: Home (Dashboard)**\
+The main landing screen showing member tier, relationship value, points balance, primary CTA (redeem points), featured offers (3-tile carousel), and contextual nudge banner. Uses global `AppContext` with `accountContext` selector (Overview/Preferred/Reserved). Demonstrates full state lifecycle (loading \uc0\u8594  success/error), skeleton loaders, and telemetry logging. Establishes the app's visual language: gradient backgrounds, glassmorphic cards, rounded corners. **Technical**: Introduced MSW setup, AppContext pattern, AccountSelector component, and design system atoms (Button, Card, Badge, etc.). **UX**: Sets the tone as a relationship banking app focused on value and rewards, with clear hierarchy and progressive disclosure.\
+\
+### **02: Rewards (Overview)**\
+Points balance display with animated counters, activity preview (last 3 transactions with load-more link), destinations explainer (redemption options), and bottom-sheet redeem flow (amount input, destination picker, preview, submit). Auto-opens redeem sheet via `?autoOpen=redeem` query param. Extends `AppContext` with rewards-specific actions. **Technical**: Introduced `RedeemSheet` pattern (mobile: bottom sheet, desktop: right drawer), optimistic UI updates with rollback, multi-step form validation, toast notifications. **UX**: Emphasizes immediate value and clear redemption path, with explicit feedback loops (toasts, validation, expected credit date).\
+\
+### **03: Rewards \uc0\u8594  History**\
+Transaction ledger with filters (type: earn/redeem/all, date range pickers, search input, sort: recent/oldest/amount), cursor-based pagination (load more button), and grouped display (today/yesterday/last 7 days/earlier). No global state\'97fully self-contained with local state and query params. **Technical**: Debounced search (300ms), URL state management via `useSearchParams`, date range validation, mock cursor pagination (20 items/page). Demonstrates client-side filtering and sorting patterns. **UX**: Provides transparency and control\'97users can audit their activity with powerful filtering, essential for trust in loyalty programs.\
+\
+### **04: Rewards \uc0\u8594  Badges**\
+Achievement system with tabs (All/Earned/In Progress), badge grid (visual cards with ProgressRing), streak summary (days, skips, milestones), challenges list (steps with completion checkboxes), and badge details drawer (expanded view with lore, criteria, date earned). Feature-flagged (design-mode). **Technical**: Introduced `ProgressRing` SVG component, `StatusRibbon` overlay, step-based challenge progression with optimistic updates. State managed locally. **UX**: Gamification to drive engagement\'97badges reward milestones, streaks encourage frequency, challenges guide behavior. Creates emotional connection beyond transactional rewards.\
+\
+### **05: Offers (CLO)**\
+Cashback offer discovery with search, category tabs (All/Grocery/Dining/Fuel/Travel/Retail/Services), activate-all button, offer grid/list views, and offer details drawer. Each tile shows merchant, cashback %, expiry badge, active status. Uses global `AppContext` for offers state. **Technical**: Introduced `OfferTile` with complex activation logic, `OfferDetailsDrawer` with T&C accordion, `ActivateAllButton` with bulk operations, `CategoryTabs` with counts. Optimistic UI with rollback on error. **UX**: Low-friction discovery and activation\'97users browse offers like a catalog, activate with one tap, see immediate feedback. Expiry urgency drives timely action.\
+\
+### **06: Tiers & Benefits (Relationship)**\
+Tier progression screen with current tier header (badge, grace period), progress card (visual bar, YTD spend, target, gap to next tier), requirements card (checklist: balance, deposits, products), benefits accordion (tier-gated perks), and ways-to-advance grid (actionable suggestions). Uses global `AppContext`. **Technical**: Multi-tier benefit system with tier filtering, accordion with auto-expand, progress visualization with color coding (on-track/at-risk/grace), dynamic content based on user's tier. **UX**: Transparency on tier status and clear path to advancement. Relationship banking value prop: "Do more with us, unlock more benefits." Gamification via progress tracking.\
+\
+### **07: Goals & Wellness**\
+Savings goal manager with goal summary bar (total saved, active goals count), goal grid (cards with progress, ETA, contribute button), new goal dialog (multi-step: name/target/autosave config), contribute sheet (amount input with quick buttons), round-ups card (toggle + preview), autosave card (toggle + cadence/amount config), and wellness tips (motivational content). Feature-flagged. **Technical**: ETA calculation heuristic (based on autosave + round-ups), goal CRUD operations, complex form validation (name uniqueness, min/max amounts, cadence rules), optimistic updates with rollback. Local state. **UX**: Empowers users to set financial goals with automated savings tools. Wellness tips provide behavioral nudges. Progress visualization and ETA create motivation. Ties financial health to relationship value.\
+\
+### **08: Support**\
+Help/contact hub with tier-based support channels: priority line card (phone, hours, SLA), callback request (multi-step dialog: topic, time window, phone, notes), secure messaging (topic, message text), and FAQ search/browse (debounced search, expandable articles). Visual tier chip shows support level. **Technical**: Introduced `Textarea` design system atom, multi-step dialogs with validation, callback window computation (today AM/PM, tomorrow AM/PM with ISO timestamps), FAQ filtering with highlighted search terms. Local state. **UX**: Tiered support reinforces relationship value\'97higher tiers get faster access and dedicated channels. Multiple contact options reduce friction. FAQ self-service reduces support load while empowering users.\
+\
+### **09: Settings / Preferences**\
+User preferences management with cards for language (en/es/fr radio group), notification sensitivity (low/medium/high radio group), quiet hours (toggle + time pickers with validation), interests (multi-select chips, max 6), and privacy (export data JSON, clear local data with double confirmation). SaveBar appears when dirty state detected. **Technical**: Introduced `ToggleChip` design system atom, dirty state tracking via deep object comparison, partial PATCH on save (only changed fields), client + server validation (time format, start\uc0\u8800 end, max interests), export as downloadable JSON blob, clear data triggers app reload. Local state. **UX**: Granular control over app experience\'97users customize language, notifications, content preferences. Privacy controls build trust. SaveBar prevents accidental data loss.\
+\
+### **10: Global Navigation (Responsive App Shell)**\
+Full app shell with skip link, global header (brand + AccountSelector), responsive navigation (desktop: side rail with all 9 routes; mobile: bottom tab bar with 4 primary tabs + More button for 5 secondary routes), and More sheet/drawer (bottom sheet on mobile, right drawer on desktop). All screens accessible with no dead ends. **Technical**: Config-driven navigation (`nav.json` seed), active route detection via `usePathname()` with exact match for `/` and prefix match for nested routes, icon mapping (`lucide-react`), focus trap in More sheet, MSW handlers for nav config. `AppShell` wraps all pages in `layout.tsx`. Removed individual page headers\'97AccountSelector now global. **UX**: Consistent, accessible navigation across all screens. Bottom tabs optimize for mobile thumb zones. Side rail provides always-visible wayfinding on desktop. Skip link ensures screen reader accessibility. No user can get lost\'97every route is 2 taps away max.\
+\
+---\
+\
+## [General Implementation Notes]\
+\
+**Coding Conventions:**\
+- Use `"use client"` directive for all interactive components\
+- TypeScript strict mode\'97define interfaces for all props and service responses\
+- Component file structure: imports \uc0\u8594  types \u8594  component \u8594  display name\
+- Always provide `aria-label`, `aria-current`, `aria-live`, `role` attributes for a11y\
+- Console logging for telemetry: `console.log('event_name', \{ ...metadata \})`\
+- Error boundaries not implemented\'97use try/catch with user-facing error messages via toast\
+\
+**Architectural Patterns:**\
+- **Service Layer**: Every feature has a `*.service.ts` facade with typed interfaces. Service methods return promises. Real API calls replaced by MSW-intercepted fetch.\
+- **Seed Data**: JSON files in `/src/seed/` serve as mock database. MSW handlers read/mutate these.\
+- **State Management**: Use global `AppContext` only for cross-screen shared state (Home/Rewards/Offers/Tiers). Otherwise, use local `useState`.\
+- **URL State**: Use `useSearchParams` for filters, query params, and deep linking (e.g., `?autoOpen=redeem`, `?badge=123`).\
+- **Optimistic UI**: Update local state immediately, show loading spinner, rollback on error with toast.\
+- **Responsive Patterns**: Mobile-first. Use `md:` breakpoint (768px) for desktop layouts. Bottom sheets on mobile, drawers/modals on desktop.\
+\
+**Reusable Design System:**\
+All atoms live in `/src/design-system/components/`:\
+- `Button`, `Card`, `Badge`, `Input`, `Label`, `Select`, `Switch`, `Textarea`\
+- `Avatar`, `ToggleChip`, `Pill` (info/warning/success variants)\
+- `PercentBadge`, `ExpiryBadge`, `StatusRibbon` (badge overlays)\
+- `ProgressRing` (SVG circular progress, used in Badges/Goals)\
+\
+**Component Patterns:**\
+- **Sheets/Drawers**: Bottom sheet on mobile (`fixed inset-x-0 bottom-0`), right drawer on desktop (`fixed inset-y-0 right-0 w-[440px]`). Use focus trap, backdrop, Esc key to close. Return focus to trigger button on close.\
+- **Multi-step Dialogs**: Track `step` state (1, 2, 3...), validate each step before advancing, show progress indicator, allow back navigation.\
+- **Skeletons**: Use animate-pulse gray boxes matching layout structure during loading states.\
+- **Toasts**: Use `useToast()` hook from `ToastHost` for success/error/info messages. Auto-dismiss after 4s.\
+\
+**Accessibility Rules:**\
+- Every interactive element has `:focus-visible:ring-2` styles\
+- Use semantic HTML (`<button>`, `<nav>`, `<main>`, `<header>`)\
+- Provide landmarks with `aria-label` (e.g., `<nav aria-label="Primary">`)\
+- Use `aria-current="page"` on active nav items\
+- Use `aria-live="polite"` for dynamic content updates (toasts, context changes)\
+- All icons must have visible text labels (no icon-only buttons without `aria-label`)\
+- Touch targets must be \uc0\u8805  44px on mobile\
+\
+**MSW Patterns:**\
+- Handlers in `/src/mocks/handlers.ts` export as array\
+- Use `http.get()`, `http.post()`, `http.patch()`, etc. from `msw`\
+- Return `HttpResponse.json()` for JSON responses\
+- Mutate seed data directly (e.g., `rewardsData.balance -= amount`)\
+- Simulate delays with `await delay(300)` for realism (optional)\
+- Validate request bodies and return 400 errors for invalid data\
+\
+**Naming Conventions:**\
+- Components: PascalCase (e.g., `RedeemSheet.tsx`)\
+- Services: kebab-case with `.service.ts` suffix (e.g., `rewards.service.ts`)\
+- Seed files: kebab-case JSON (e.g., `home.json`)\
+- Event names: snake_case (e.g., `offer_activated`)\
+\
+**DO NOT:**\
+- Use `any` type\'97always define interfaces\
+- Create global CSS classes for one-off styles\'97use Tailwind utilities\
+- Modify `next.config.ts` or `postcss.config.mjs` without explicit instruction\
+- Add new npm packages without confirming necessity\
+- Create test files (no test framework configured)\
+\
+---\
+\
+## [Next Steps]\
+\
+**You are ready to continue building additional screens or features.** When the user provides the next screen spec pack or feature request:\
+\
+1. **Review** the spec thoroughly, noting UX requirements, data contracts, interactions, and acceptance criteria.\
+2. **Plan** the implementation, deciding on:\
+   - Service layer structure (types, methods, MSW handlers)\
+   - State management approach (global AppContext vs local state)\
+   - New design system atoms needed (if any)\
+   - Component breakdown (containers, presentational components)\
+   - Accessibility considerations (ARIA, keyboard nav, focus management)\
+3. **Ask clarifying questions** if the spec is ambiguous (e.g., state management preference, sheet vs dialog, feature flag approach).\
+4. **Implement** systematically:\
+   - Create service + seed data + MSW handlers first\
+   - Build design system atoms next (if needed)\
+   - Build feature components from bottom-up (atoms \uc0\u8594  molecules \u8594  organisms)\
+   - Assemble main page component last\
+   - Remove any linter errors\
+   - Test basic flows (loading, success, error states)\
+5. **Document** the implementation with a summary markdown file (e.g., `FEATURE_IMPLEMENTATION.md`).\
+\
+**Maintain consistency** with all prior work:\
+- Follow the same file structure, naming conventions, and architectural patterns.\
+- Use the existing design system atoms and patterns (sheets, drawers, multi-step dialogs, skeletons, toasts).\
+- Ensure all screens integrate seamlessly with the global navigation (AppShell).\
+- Keep accessibility, responsive design, and telemetry logging as non-negotiable requirements.\
+\
+**Proceed with confidence**\'97the foundation is solid, the patterns are established, and the next feature will build on this proven architecture.}

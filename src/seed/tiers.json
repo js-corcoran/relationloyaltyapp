@@ -1,0 +1,68 @@
+{
+  "memberTier": {
+    "tier": "Gold",
+    "aum": 42000,
+    "aab": 0,
+    "progressPct": 56,
+    "graceEndsAt": null,
+    "nextTier": "Platinum",
+    "deltaToNextUsd": 33000
+  },
+  "thresholds": [
+    { "name": "Member", "aumMin": 0, "aabMin": 0 },
+    { "name": "Silver", "aumMin": 5000, "aabMin": 0 },
+    { "name": "Gold", "aumMin": 25000, "aabMin": 0 },
+    { "name": "Platinum", "aumMin": 75000, "aabMin": 0 },
+    { "name": "Reserved", "aumMin": 150000, "aabMin": 0 }
+  ],
+  "benefits": [
+    {
+      "id": "b1",
+      "title": "Priority Support Line",
+      "summary": "Reach a live specialist faster.",
+      "details": "Available 8am–8pm ET; identify with your member ID.",
+      "tiers": ["Gold", "Platinum", "Reserved"],
+      "limits": null
+    },
+    {
+      "id": "b2",
+      "title": "ATM Fee Rebates",
+      "summary": "Up to $15/mo in rebates.",
+      "details": "Post within 2–3 business days.",
+      "tiers": ["Platinum", "Reserved"],
+      "limits": "$15/month"
+    },
+    {
+      "id": "b3",
+      "title": "Enhanced Cashback",
+      "summary": "+2% on select categories.",
+      "details": "See Offers for eligible merchants.",
+      "tiers": ["Reserved"],
+      "limits": null
+    }
+  ],
+  "waysToAdvance": [
+    {
+      "id": "w1",
+      "title": "Set up Direct Deposit",
+      "copy": "Consistent inflows help upgrade your tier.",
+      "cta": "View steps",
+      "targetRoute": "/goals"
+    },
+    {
+      "id": "w2",
+      "title": "Activate All Offers",
+      "copy": "Earn faster on everyday spend.",
+      "cta": "Browse offers",
+      "targetRoute": "/offers"
+    },
+    {
+      "id": "w3",
+      "title": "Grow Savings Balance",
+      "copy": "Move idle cash to your CU savings.",
+      "cta": "Create goal",
+      "targetRoute": "/goals"
+    }
+  ]
+}
+
